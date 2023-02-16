@@ -1,5 +1,4 @@
 \documentclass[12pt]{article}
-
 \usepackage{fullpage}
 \usepackage{fancybox}
 \usepackage{hyperref}
@@ -7,7 +6,7 @@
 \usepackage{graphicx}
 \usepackage{amsmath}
 \usepackage{xcolor}
-
+\usepackage{enumitem}
 \newcommand{\SubSum}{\textsf{\sc SubsetSum}}
 \newcommand{\IP}{\textsf{\sc IntProg}}
 \newcommand{\SAT}{\textsf{\sc Sat}}
@@ -30,13 +29,8 @@
 
 \vspace{0.5em}
 
-
-
 % \newpage
 
-\begin{question}
-Write your name and student number.
-\end{question}
 \color{blue}
 \color{black}
 
@@ -46,22 +40,472 @@ Write your name and student number.
 \vspace{0.5em}
 
 
+
+\begin{enumerate}[label=(\alph*)]
+      \item $$
+      \begin{bmatrix} 
+      27 & 44 & 51   \\
+      35 & 39 & 62   \\
+      33 & 50 & 47   \\
+      \end{bmatrix}
+      +
+      \begin{bmatrix} 
+      25 & 42 & 48 \\
+      33 & 40 & 66\\
+      35 & 48 & 50 \\
+      \end{bmatrix}
+      \quad
+      $$
+      $$
+      \begin{bmatrix} 
+            27 + 25 & 44 +42 & 51 + 48   \\
+            35 + 33 & 39 + 40 & 62 + 66   \\
+            33 + 35 & 50 + 48 & 47 + 50   \\
+      \end{bmatrix}
+      \quad
+$$
+
+
 $$
 \begin{bmatrix} 
-a & b & c \\
-c & d & d\\
-e & f & g \\
+      52 & 86 & 99 \\
+      68 & 79 & 128\\
+      68 & 98 & 97 \\
+      \end{bmatrix}
+\quad
+$$
+
+      \item Solve AB and BA, where
+  
+      $$
+      A = 
+      \begin{bmatrix} 
+      1 & 2 \\
+      2 & 1
+      \end{bmatrix}
+      , B = 
+      \begin{bmatrix} 
+      1 & 0 \\
+      1 & 0
+      \end{bmatrix}
+      \quad
+$$
+
+$$
+AB =
+\begin{bmatrix} 
+1*1 + 2*1 & 1*0 + 2*0 \\
+2*1 + 1* 1 & 2*0 + 1*0
 \end{bmatrix}
 \quad
 $$
 
 
+$$
+AB =
+\begin{bmatrix} 
+3 & 0 \\
+3 & 0
+\end{bmatrix}
+\quad
+$$
+
+$$
+BA =
+\begin{bmatrix} 
+1*1 + 0*2 & 1 * 2 + 0*1 \\
+1*1 + 0*2 &1*2 + 0*1
+\end{bmatrix}
+\quad
+$$
+
+
+$$
+BA =
+\begin{bmatrix} 
+1 & 2  \\
+1 & 2
+\end{bmatrix}
+\quad
+$$
+
+
+In general, matrix multiplication is noncommutative as $BA \neq AB.$
+
+
+      \item Compute $(A+B)^T$, for A and B below:
+      
+
+
+      $$
+      A = 
+      \begin{bmatrix} 
+      1 & 2 \\
+      3 & 0
+      \end{bmatrix}
+      , B = 
+      \begin{bmatrix} 
+      3 & 1 \\
+      -1 & 1
+      \end{bmatrix}
+      \quad
+$$
+
+
+$$
+A + B = 
+\begin{bmatrix} 
+1 + 3 & 2 + 1 \\
+3 + -1 & 0 + 1
+\end{bmatrix}
+\quad
+$$
+
+$$
+A + B = 
+\begin{bmatrix} 
+4 & 3 \\
+2 & 1
+\end{bmatrix}
+\quad
+$$
+
+$$
+(A + B)^T = 
+\begin{bmatrix} 
+4 & 2 \\
+3 & 1
+\end{bmatrix}
+\quad
+$$
+
+$$
+(A + B)^T - B^T= 
+\begin{bmatrix} 
+4 & 2 \\
+3 & 1
+\end{bmatrix}
+-
+\begin{bmatrix} 
+3 & 1 \\
+-1 & 1
+\end{bmatrix}
+\quad
+$$
+
+$$
+A^T + B^T - B^T= 
+\begin{bmatrix} 
+1 & 3 \\
+2 & 0
+\end{bmatrix}
++
+\begin{bmatrix} 
+      3 & -1 \\
+      1 & 1
+      \end{bmatrix}
+-
+\begin{bmatrix} 
+3 & -1 \\
+1 & 1
+\end{bmatrix}
+\quad
+$$
+
+$$
+A^T + B^T - B^T= 
+\begin{bmatrix} 
+1 & 3 \\
+2 & 0
+\end{bmatrix}
++
+\begin{bmatrix} 
+      0 & 0 \\
+      0 & 0
+      \end{bmatrix}
+\quad
+$$
+Additive inverse on $M(\mathbb{R})_{2x2}$ yields:
+$$
+A^T = 
+\begin{bmatrix} 
+1 & 3 \\
+2 & 0
+\end{bmatrix}
+\quad
+$$
+
+and,
+$$
+B^T = 
+\begin{bmatrix} 
+3 & -1 \\
+1 & 1
+\end{bmatrix}
+\quad
+$$
+
+Thus: $A^T + B^T = (A + B)^T$ which was to be shown.
+
+\end{enumerate}
+\end{question}
+
+\begin{question}
+ 
+
+\begin{enumerate}[label=(\alph*)]
+       
+      \item Compute the following limits:
+      
+
+      \begin{enumerate}[label=(\alph*)]
+       
+            \item $\lim_{x \to -2}(x^2 + 5x)$
+            
+            $\lim_{x \to -2^+}(x^2 + 5x)$ 
+
+            $$
+            ((2^+)^2 + 5(2^+))
+            $$
+
+            $$
+            (4 + 10)
+            $$
+
+            $$
+            \lim_{x \to -2^+}(x^2 + 5x) = 14
+            $$
+
+            $\lim_{x \to -2^-}(x^2 + 5x)$
+
+            $$
+            ((2^-)^2 + 5(2^-))
+            $$
+            
+            $$
+            (4+ 10)
+            $$
+
+            $$
+            \lim_{x \to -2^-}(x^2 + 5x) = 14
+            $$
+
+
+            $$\lim_{x \to -2^-}(x^2 + 5x) = 14 = \lim_{x \to -2^+}(x^2 + 5x) $$
+
+            $$\lim_{x \to -2}(x^2 + 5x) = 14$$
+
+
+            \item $\lim_{x \to 4} \frac{2x^{\frac{3}{2}} - x^{\frac{1}{2}}}{x^2 - 15}$
+            
+            $$
+            \lim_{x \to 4^+} \frac{2x^{\frac{3}{2}} - x^{\frac{1}{2}}}{x^2 - 15}
+            $$
+
+            $$
+            \frac{2(2^+))^{\frac{3}{2}} - (4^+)^{\frac{1}{2}}}{x^2 - 15}
+            $$
+
+
+            $$
+            \frac{2(2^+)(2^+)(2^+) - (2^+)}{(16^+) - 15}
+            $$
+
+            $$
+            \frac{16 - 2}{1}
+            $$
+
+            $$
+            \lim_{x \to 4^+} \frac{2x^{\frac{3}{2}} - x^{\frac{1}{2}}}{x^2 - 15} = 14
+            $$
+
+            $$
+            \lim_{x \to 4^-} \frac{2x^{\frac{3}{2}} - x^{\frac{1}{2}}}{x^2 - 15}
+            $$
+
+            $$
+            \frac{2(2^-)(2^-)(2^-) - (2^-)}{(16^-) - 15}
+            $$
+
+            $$
+            \frac{16 - 2}{1}
+            $$
+
+            $$
+            \lim_{x \to 4^+} \frac{2x^{\frac{3}{2}} - x^{\frac{1}{2}}}{x^2 - 15} = 14 = 
+            \lim_{x \to 4^-} \frac{2x^{\frac{3}{2}} - x^{\frac{1}{2}}}{x^2 - 15}
+            $$
+
+            $$\lim_{x \to 4} \frac{2x^{\frac{3}{2}} - x^{\frac{1}{2}}}{x^2 - 15} = 14$$
+      
+            \item $\lim_{x \to a}(A x^n)$
+            
+            We need to be careful, as the following does not hold for $ \forall [x, a, n] \in \mathbb{R}$, for example 
+            if $a = 0$ and $n < 0$ then we are dividing by zero which is undefined as the left sided and right sided limits diverge from each other.
+
+            Asumming $ x, a \geq 0$.
+            $$\lim_{x \to a+}(A x^n)$$
+
+            $$\lim_{x \to a+}(A x^n) = A (a^+)^n$$
+
+
+            $$ = (A x^n) $$
+
+            Asumming $ x, a > 0$.
+            $$\lim_{x \to a^-}(A x^n)$$
+
+            $$\lim_{x \to a^-}(A x^n) = A (a^-)^n$$
+
+            $$ = (A x^n) $$
+
+            $$\lim_{x \to a^-}(A x^n) = A a^n = \lim_{x \to a+}(A x^n)$$
+
+            $$\lim_{x \to a}(A x^n) = A a^n$$ If and only if $ x, a > 0, $ if $n < 0$ otherwise if $n > 0$ then $x, a$ are free and the limits converge.
+
+      \end{enumerate}
+
+
+      \item Find an expression for $dz$ in terms of $dx$ and $dy$ in the following:
+      \begin{enumerate}[label=(\alph*)]
+            \item $z = Ax^a + By^b$
+            $$z = f(x,y) = Ax^a + By^b$$
+
+            $$ dz = \frac{\partial f}{\partial x} dx + \frac{\partial f}{\partial y} dy$$
+
+            $$ dz = aAx^{a-1} dx +  bBy^{b-1} dy$$
+
+
+            \item $z = e^{xu}, where \ u = u(x,y).$
+            
+            $$z = f(x,y) = e^{xu}, where \ u = u(x,y)$$
+
+            % Label $g(x,u) = e^{xu}$.
+
+            $$ dz = \frac{\partial f}{\partial x} dx +
+             \frac{\partial f}{\partial u} \frac{\partial u}{\partial x}dx +
+             \frac{\partial f}{\partial u} \frac{\partial u}{\partial y} dy
+            $$
+
+      
+            $$ dz =  \left(\frac{\partial f}{\partial x}  +
+            \frac{\partial f}{\partial u} \frac{\partial u}{\partial x} \right)dx +
+             \frac{\partial f}{\partial u} \frac{\partial u}{\partial y} dy 
+            $$
+
+            $$ dz =  \left(ue^{xu} +
+            xe^{xu}  \frac{\partial u}{\partial x} \right)dx +
+            xe^{xu} \frac{\partial u}{\partial y} dy 
+            $$
+
+            $u = u(x,y)$ is unknown so its derivative with respect to x and y are unknown.
+            \item $z = ln(x^2 + y)$
+            
+
+            $$z = f(x,y) = ln(x^2 + y)$$
+
+            let $u = x^2 + y$
+            $$ dz = \frac{\partial f}{\partial u}\frac{\partial u}{\partial x} dx +
+            \frac{\partial f}{\partial u}\frac{\partial u}{\partial y} dy
+            $$
+
+            $$ dz = \frac{\partial f}{\partial u} \left( \frac{\partial u}{\partial x} dx +
+            \frac{\partial u}{\partial y} dy\right)
+            $$
+
+            $$ dz = \frac{1}{u} \left( 2x dx +
+            dy\right)
+            $$
+
+            $$ dz = \frac{2x + 1}{x^2 + y}
+            $$
+
+
+      \end{enumerate}
+\end{enumerate}
+
 \end{question}
 
 
 
+\begin{question}
 
-\color{blue}
+\end{question}
+Find $A^{-1}$
+$$
+A = 
+\begin{bmatrix} 
+1 & 2 & 3 \\
+0 & 1 & -1 \\
+1 & 2 & 1
+\end{bmatrix}
+\quad
+$$
 
+
+$$det(A) = (1 * 1 * 1 )+ (2 * -1 *1) + (3* 0 * 2) - (2*0*1) - (1 *-1 * 2) - (3* 1 * 1)$$
+
+$$det(A) = 1+ -2 + 0 - 0 - -2 - 3 = -2$$
+
+Matrix is invertible.
+
+$$A^{-1} = \frac{1}{det(A)} cof(A)^T = \frac{1}{det(A)} adj(A)$$
+
+$$
+minidets(A) = 
+\begin{bmatrix} 
+3 & 1 & -1 \\
+-4 & -2 & 0 \\
+-5 & -1 & 1
+\end{bmatrix}
+\quad
+$$
+
+$$
+cof(A) = 
+\begin{bmatrix} 
+3 & -1 & -1 \\
+4 & -2 & 0 \\
+-5 & 1 & 1
+\end{bmatrix}
+\quad
+$$
+
+
+
+$$
+cof(A)^T = adjoint(A) = 
+\begin{bmatrix} 
+3 & 4 & -5 \\
+-1 & -2 & 1 \\
+-1 & 0 & 1
+\end{bmatrix}
+\quad
+$$
+
+$$
+A^{-1} = 
+\frac{1}{-2}
+\begin{bmatrix} 
+3 & 4 & -5 \\
+-1 & -2 & 1 \\
+-1 & 0 & 1
+\end{bmatrix}
+\quad
+$$
+
+$$
+A^{-1} = 
+\begin{bmatrix} 
+\frac{-3}{2} & -2 & \frac{5}{2} \\
+\frac{1}{2} & 1 & \frac{-1}{2} \\
+\frac{1}{2} & 0 & \frac{-1}{2}
+\end{bmatrix}
+\quad
+$$
+
+
+\begin{question}
+
+\end{question}
 
 \end{document}
