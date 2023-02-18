@@ -262,7 +262,7 @@ Thus: $A^T + B^T = (A + B)^T$ which was to be shown.
        
             \item $\lim_{x \to -2}(x^2 + 5x)$
             
-            $\lim_{x \to -2^+}(x^2 + 5x)$ 
+            $$\lim_{x \to -2^+}(x^2 + 5x)$$
 
             $$
             ((2^+)^2 + 5(2^+))
@@ -273,7 +273,7 @@ Thus: $A^T + B^T = (A + B)^T$ which was to be shown.
             $$
 
             $$
-            \lim_{x \to -2^+}(x^2 + 5x) = 14
+            \lim_{x \to -2^+}(x^2 + 5x) = -6
             $$
 
             $\lim_{x \to -2^-}(x^2 + 5x)$
@@ -287,13 +287,13 @@ Thus: $A^T + B^T = (A + B)^T$ which was to be shown.
             $$
 
             $$
-            \lim_{x \to -2^-}(x^2 + 5x) = 14
+            \lim_{x \to -2^-}(x^2 + 5x) = -6
             $$
 
 
-            $$\lim_{x \to -2^-}(x^2 + 5x) = 14 = \lim_{x \to -2^+}(x^2 + 5x) $$
+            $$\lim_{x \to -2^-}(x^2 + 5x) = -6 = \lim_{x \to -2^+}(x^2 + 5x) $$
 
-            $$\lim_{x \to -2}(x^2 + 5x) = 14$$
+            $$\lim_{x \to -2}(x^2 + 5x) = -6$$
 
 
             \item $\lim_{x \to 4} \frac{2x^{\frac{3}{2}} - x^{\frac{1}{2}}}{x^2 - 15}$
@@ -337,10 +337,12 @@ Thus: $A^T + B^T = (A + B)^T$ which was to be shown.
             $$
 
             $$\lim_{x \to 4} \frac{2x^{\frac{3}{2}} - x^{\frac{1}{2}}}{x^2 - 15} = 14$$
+
+            A limit of $ 15^{1/2} $ would be a different story.
       
             \item $\lim_{x \to a}(A x^n)$
             
-            We need to be careful, as the following does not hold for $ \forall [x, a, n] \in \mathbb{R}$, for example 
+            We need to be careful, as the following does not hold for $ \forall x, a, n \in \mathbb{R}$, for example 
             if $a = 0$ and $n < 0$ then we are dividing by zero which is undefined as the left sided and right sided limits diverge from each other.
 
             Asumming $ x, a \geq 0$.
@@ -416,7 +418,7 @@ Thus: $A^T + B^T = (A + B)^T$ which was to be shown.
             dy\right)
             $$
 
-            $$ dz = \frac{2x + 1}{x^2 + y}
+            $$ dz = \frac{2xdx + 1dy}{x^2 + y}
             $$
 
 
@@ -510,16 +512,18 @@ $$
       $$Q_d = a-bp \quad (a, b> 0)$$
       $$Q_s = -c +dp \quad (c, d > 0)$$
 
-      Endogenous variables are:  $\{P, Q\}$ which are functions of the exogenous variables: $\{a,b,c, d\}$.
+      Endogenous variables:  $\{P, Q_s, Q_d\}$ which are functions of the exogenous variables :$\{a,b,c,d\}$.
      
 
 
       \begin{enumerate}[label=(\alph*)]
             \item Derive $P^*$ and $Q^*$ in equilibrium (when quantity supplied = to quantity demanded)
       
-            We want to find the intersection of the supply and demand curves.
+            We want to find the intersection of the supply and demand curves. Since $b$ and $d$ are both positive, we know the demand 
+            and supply curve are opposite sloping. An intersection of the supply and demand curves must exist.
+
             $$D = \{(P,Q) | Q = a-bP\} $$
-            $$S = \{(P,Q) | Q -c +dP\} $$
+            $$S = \{(P,Q) | Q = -c +dP\} $$
             $$D \cap S = (P^*, Q^*)$$
             $$  Q_d = a-bP = -c +dP = Q_s \quad (c, d > 0), (a, b > 0)$$
             $$   a + c = bP +dP  $$
@@ -529,8 +533,8 @@ $$
             $$ Q^* = \frac{a(b + d) - b(a + c)}{b +d} $$
             $$ Q^* = \frac{ab +ad - ba - bc}{b +d} $$
             $$ Q^* = \frac{ab - ab +ad - bc}{b +d} $$
-            $$ Q^* = \frac{ad - bc}{b +d} \quad (a, b, c, d > 0)$$
-            $$   P^* = \frac{a + c}{b +d}  \quad (a, b, c, d > 0)$$
+            $$ Q^* = \frac{ad - bc}{b +d} \quad (a, b, c, d > 0),\quad (b+d > 0) \rightarrow (ad > bc)$$
+            $$  P^* = \frac{a + c}{b +d}  \quad (a, b, c, d > 0)$$
 
             \item Examine the comparative-static properties of the equilibrium quantity and provide the economic meaning
             of it? (Note compute partial derivatives 
@@ -539,6 +543,68 @@ $$
             This comparative-static model reflects the equilibrium point $(Q^*, P^*)$ with respect to a single commodity. 
             The exogenous variables $a$ and $c$ reflect the Q axis intercept, while the remaining exogenous variables $b$ and $d$ 
             reflect the change in quantity with respect to $P$.
+            $$ \frac{\partial Q^*}{\partial a} = \frac{d}{b+d} 
+            $$
+            $$ \frac{\partial Q^*}{\partial c} = -\frac{b}{b+d} 
+            $$
+            $$ \frac{\partial Q^*}{\partial d} = \frac{a(b+d) - (ad -bc)}{(b+d)^2} 
+            $$
+            $$ \frac{\partial Q^*}{\partial d} = \frac{ab+ad - ad +bc}{(b+d)^2} 
+            $$
+            $$ \frac{\partial Q^*}{\partial d} = \frac{ab +bc}{(b+d)^2} 
+            $$
+            $$ \frac{\partial Q^*}{\partial d} = \frac{b(a-c)}{(b+d)^2} 
+            $$
+            lastly,
+            $$ \frac{\partial Q^*}{\partial b} = \frac{-c(b+d) - (ad -bc)}{(b+d)^2} 
+            $$
+            $$ \frac{\partial Q^*}{\partial b} = \frac{-cb+-cd - ad +bc}{(b+d)^2} 
+            $$
+            $$ \frac{\partial Q^*}{\partial b} = \frac{-cd - ad }{(b+d)^2} 
+            $$
+            finally,
+            $$ \frac{\partial Q^*}{\partial a} = \frac{d}{b+d}
+            $$
+            $$ \frac{\partial Q^*}{\partial b} = -\frac{d(c + a) }{(b+d)^2} 
+            $$
+            $$ \frac{\partial Q^*}{\partial c} = -\frac{b}{b+d}
+            $$
+            $$ \frac{\partial Q^*}{\partial d} = \frac{b(a+c)}{(b+d)^2} 
+            $$
+            $$ \frac{\partial P^*}{\partial a} = \frac{1}{b+d} = \frac{\partial P}{\partial c}
+            $$
+            $$ \frac{\partial P^*}{\partial b} = -\frac{a + c}{(b+d)^2} = \frac{\partial P}{\partial d}
+            $$
+            $$Q_d = a-bP \quad (a, b> 0)$$
+            $$Q_s = -c +dP \quad (c, d > 0)$$
+
+            $a$ represents the quantity demanded at $P = 0$.
+
+            If $a$ increases, both the equilibrium price and quantity increase.
+
+            If $a$ decreases, both the equilibrium price and quantity decrease.
+
+            $c$ represents the quantity supplied at $P = 0$.
+
+            If $c$ increases, the equilibrium price increases and the equilibrium quantity decrease.
+
+            If $c$ decreases, the equilibrium price decreases and the equilibrium quantity increases.
+
+            $b$ represents the per unit negation of the number of units demanded given a price $P$ (I hope that makes sense). Negative slope.
+            
+            If $b$ increases, the demand slope becomes steeper, the equilibrium price decreases and the equilibrium quantity decrease.
+
+            If $b$ decreases, the demand slope becomes more shallow, the equilibrium price increase and the equilibrium quantity increase.
+
+            $d$ represents the per unit of additional units supplied given a price $P$. Positive slope.
+
+            If $d$ increases, the supply slope becomes steeper, the equilibrium price decreases and the equilibrium quantity increases.
+
+            If $d$ decreases, the supply slope becomes more shallow, the equilibrium price increases and the equilibrium quantity decreases.
+
+            For all cases, and if all else is constant.
+
+            Hopefully I did not cross my wires.
 
       \end{enumerate}
 
